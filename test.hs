@@ -4,12 +4,14 @@ import Answer
 
 -- referring to source of words 
 -- http://www.haskell.org/ghc/docs/latest/html/libraries/base-4.6.0.0/src/Data-List.html#words
+split :: (Char -> Bool) -> [Char] -> [[Char]]
 split f s =
     case dropWhile f s of
          "" -> []
          s' -> w : words s''
                where (w, s'') = break f s'
 
+doAssert :: [String] -> Assertion
 doAssert [name, input, expected] =
     assertEqual name expected (solve input)
 

@@ -33,3 +33,10 @@ int main(int argc, char* argv[])
 
     return 0;
 }
+
+/*
+% gcc answer.c test.c -o c_test; ./c_test
+Failure in #2
+expected: 13245
+actual: 12345
+*/

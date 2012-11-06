@@ -41,3 +41,10 @@ int main(int, char* [])
 
     return 0;
 }
+
+/*
+% g++ answer.cpp test.cpp -o cpp_test; ./cpp_test
+Failure in #2
+expected: "13245"
+  actual: "12345"
+*/

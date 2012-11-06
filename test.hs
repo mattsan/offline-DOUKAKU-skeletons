@@ -12,8 +12,9 @@ split f s =
                where (w, s'') = break f s'
 
 doAssert :: [String] -> Assertion
-doAssert [name, input, expected] =
+doAssert (name:input:expected:_) =
     assertEqual name expected (solve input)
+doAssert _ = error "Specify a list which contains more than 3 items."
 
 main :: IO ()
 main =

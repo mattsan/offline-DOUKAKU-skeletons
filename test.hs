@@ -16,9 +16,7 @@ doAssert [name, input, expected] =
 main :: IO ()
 main =
     readFile "patterns.tsv"
-    >>= return . lines
-    >>= return . test . map (doAssert . split (== '\t'))
-    >>= runTestTT
+    >>= runTestTT . test . map (doAssert . split (== '\t')) . lines
     >>  return ()
 
 -- % runhaskell test.hs
